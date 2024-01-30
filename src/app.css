@@ -1,0 +1,17 @@
+.middle-container{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.middle-container .left-div{
+    flex-grow: 1;
+    margin-left: 195px
+}
+.middle-container  .right-div{
+    flex-grow: 25;
+    
+}
