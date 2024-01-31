@@ -3,9 +3,9 @@
     margin-top: 15px;
     padding: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
-    background-color: whitesmoke;
+    background-color: rgb(237, 234, 234);
     height: max-content;
 }

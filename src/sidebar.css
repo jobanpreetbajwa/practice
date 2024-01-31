@@ -24,7 +24,9 @@
     font-weight: bolder;
 }
 .sidebar .menubar{
-    visibility: hidden;
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: opacity 1s ease;
     background-color:whitesmoke;
     width: inherit; 
     margin-bottom: 15px;
@@ -32,7 +34,8 @@
         
 }
 .sidebar .menubar.clicked{
-    visibility: visible;
+    /* visibility: visible; */
+    opacity: 1;
 }
 .sidebar .menubar ul{
     padding-left: 10px;

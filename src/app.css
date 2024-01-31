@@ -1,4 +1,6 @@
 .middle-container{
+    padding-top: 110px;
+    top: 120px;
     display: flex;
     flex-direction: row;
     height: auto;
