@@ -11,7 +11,7 @@ export default function UseGetdata() {
         },
       });
       const data = await res.json();
-      setDateitems(data.slice(1, 10));
+      setDateitems(data.slice(1, 20));
     } catch (error) {
       console.log("error while fetching api", error);
     }

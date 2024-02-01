@@ -1,7 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { createPortal } from "react-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
+import Auth from "./components/store/auth";
+import Carttotal from "./components/content/cartTotal";
+import Cart from "./components/store/cartContext";
 export default function Navbar() {
+  const cartcxt = useContext(Cart);
+  const authcxt = useContext(Auth);
+  const navigate = useNavigate();
+  const tokenHandler = () => {
+    authcxt.setToken(true);
+    navigate("/blog", { replace: true });
+  };
+  const cartHandler = () => {
+    cartcxt.update((prev) => {
+      return prev + 10;
+    });
+    alert(cartcxt.total);
+    // console.log("hello");
+    // const element = document.getElementById("App");
+    // createPortal(<Carttotal />, element);
+  };
   return (
     <div className="container">
       <div className="header">
@@ -17,15 +37,17 @@ export default function Navbar() {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/features">Featues</Link>
+              <Link to="/features">Featuers</Link>
             </li>
             <li className="right">
-              <Link to="/solutions" className="text">
-                Solutions
-              </Link>
+              <button className="text" onClick={cartHandler}>
+                cart
+              </button>
             </li>
             <li>
-              <Link to="signup">signin</Link>
+              <Link to="signup" onClick={tokenHandler}>
+                signin
+              </Link>
             </li>
           </ul>
         </div>
