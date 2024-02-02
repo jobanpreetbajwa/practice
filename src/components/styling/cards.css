@@ -10,4 +10,9 @@
     border: 1px solid whitesmoke;
     border-radius: 8px;
     box-shadow: 2px 2px rgb(243, 242, 242);
+    cursor: pointer;
+}
+.card h2,span{
+    pointer-events:none;
+    /* cursor:crosshair; */
 }

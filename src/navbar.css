@@ -57,6 +57,7 @@
     max-width: fit-content;
 }
 .right{
+    width: min-content;
     border-radius: 5px;
     background-color: rgb(139, 73, 201);
     margin-left: 250px;

@@ -5,12 +5,14 @@ import "./app.css";
 import { Outlet } from "react-router-dom";
 import Auth from "./components/store/auth";
 import Login from "./components/login/login";
-import Cart from "./components/store/cartContext";
+import { useLoaderData } from "react-router-dom";
 export default function App() {
+  const loaderData = useLoaderData();
+  console.log(loaderData, "loaderData");
   const [token, setToken] = useState(false);
 
   const [login, setLogin] = useState(true);
-  console.log("App");
+
   return (
     <>
       {!login && <Login />}

@@ -8,14 +8,18 @@ export default function Cards(props) {
   // throw new Error("from Cards");
   const navigateHandler = (e) => {
     navigate(`${e.target.querySelector("span").innerText}`, {
-      data: "data from card to resturo",
+      state: {
+        data: "data from card to resturo",
+        id: `${e.target.querySelector("span").innerText}`,
+      },
     });
   };
   const addTocart = (e) => {
     e.stopPropagation();
-    const price = e.target.innerText.slice(1);
-    cartctx.update(+price);
-    console.log(cartctx.total, "in card");
+    const price = +e.target.innerText.slice(1);
+    cartctx.update((prev) => {
+      return prev + price;
+    });
   };
   return (
     <div className="card" onClick={navigateHandler}>

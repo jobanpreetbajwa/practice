@@ -41,7 +41,7 @@ export default function Navbar() {
             </li>
             <li className="right">
               <button className="text" onClick={cartHandler}>
-                cart
+                cart <span>{cartcxt.total}</span>
               </button>
             </li>
             <li>

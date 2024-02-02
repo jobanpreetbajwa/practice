@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
 export default function Sidebar() {
   const [menu, setMenu] = useState(false);
   const [hover, sethover] = useState(false);
-  const [move, setMove] = useState(0);
-  // const [dropDown, setDropdown] = useState("");
+
+  const innerRef = useRef();
   const menuHandler = () => {
     setMenu(!menu);
 
     console.log("clicked");
   };
-  const hoverHandler = () => {
+  const hoverHandler = (e) => {
     sethover(true);
   };
-  const movementHandler = (e) => {};
+  const movementHandler = (e) => {
+    const outerDivRect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - outerDivRect.x;
+    const y = e.clientY - outerDivRect.y;
+    // const { offsetX, offsetY } = e.nativeEvent;
+    console.log(x, y);
+    innerRef.current.style.transform = `translate(${x}px, ${y}px)`;
+  };
   return (
     <>
       <div className="sidebar">
@@ -48,7 +55,11 @@ export default function Sidebar() {
           }}
         >
           {hover && (
-            <div className="hovered" onMouseMove={movementHandler}></div>
+            <div
+              ref={innerRef}
+              className="hovered"
+              onMouseMove={movementHandler}
+            ></div>
           )}
           <img alt="image"></img>
           <h3>Introducing Galileo AI</h3>

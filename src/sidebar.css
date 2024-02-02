@@ -65,7 +65,9 @@ text-decoration: none;
     padding-bottom: 10px;
 }
 .hovered{
-    transition: 0s;
+    cursor:crosshair;
+    z-index: 2;
+    transition: 0.1s ease-out;
     position: absolute;
     left: 0px;
     width: 90px;
@@ -73,10 +75,7 @@ text-decoration: none;
     opacity: 0.2;
     background-color: rgb(139, 73, 201);
 }
-.hovered.move{
-    background-color: aquamarine;
-    transform: translateX(292);
-}
+
 .sidebar-btn{
     border: none;
     padding: 10px;

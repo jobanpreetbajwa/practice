@@ -5,5 +5,5 @@ div .shimmer-container{
     background-color:rgb(237, 234, 234) ;
     gap: 25px;
     width: 100%;
-    height: max-content;
+    height: 100vh;
 }
